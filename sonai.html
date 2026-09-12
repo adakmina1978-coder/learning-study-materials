@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClassNotes</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #dbeafe, #ede9fe);
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      font-size: 50px;
+      color: #6b21a8;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 18px;
+      color: #444;
+    }
+
+    .notes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h2 {
+      color: #2563eb;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      color: #7e22ce;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .card button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      background: #7e22ce;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .card button:hover {
+      background: #5b21b6;
+    }
+
+    .features {
+      margin-top: 50px;
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .features h2 {
+      text-align: center;
+      color: #6b21a8;
+      margin-bottom: 30px;
+      font-size: 35px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .feature-box {
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+    }
+
+    .feature-box h3 {
+      margin-bottom: 10px;
+    }
+
+    .blue { background: #dbeafe; }
+    .purple { background: #ede9fe; }
+    .pink { background: #fce7f3; }
+    .green { background: #dcfce7; }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #555;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <header>
+      <h1>ClassNotes</h1>
+      <p>Engineering Notes, Diagrams, Formulas and Study Materials</p>
+    </header>
+
+    <div class="notes-grid">
+
+      <div class="card">
+        <h2>Semiconductor Physics</h2>
+        <h3>PN Junction Diode</h3>
+        <p>Learn depletion region, biasing and breakdown concepts.</p>
+        <button onclick="showPage('page1')">View Notes</button>
+      </div>
+
+      <div class="card">
+        <h2>Analog Electronics</h2>
+        <h3>BJT Amplifier</h3>
+        <p>Study CE, CB and CC transistor amplifier configurations.</p>
+        <button onclick="showPage('page2')">View Notes</button>
+      </div>
+
+      <div class="card">
+        <h2>Digital Electronics</h2>
+        <h3>Logic Gates</h3>
+        <p>Understand AND, OR, XOR, NAND and NOR gates.</p>
+        <button onclick="showPage('page3')">View Notes</button>
+      </div>
+
+      <div class="card">
+        <h2>FET & MOSFET</h2>
+        <h3>Enhancement MOSFET</h3>
+        <p>Learn symbols, characteristics and working principles.</p>
+        <button onclick="showPage('page4')">View Notes</button>
+      </div>
+
+    </div>
+
+    <div id="page1" class="page" style="display:none; margin-top:30px; background:white; padding:25px; border-radius:20px;">
+      <h2>PN Junction Diode Notes</h2>
+      <p>A PN junction diode is formed by joining P-type and N-type semiconductors.</p>
+      <ul>
+        <li>Forward Bias</li>
+        <li>Reverse Bias</li>
+        <li>Breakdown Voltage</li>
+        <li>Applications of Diode</li>
+      </ul>
+    </div>
+
+    <div id="page2" class="page" style="display:none; margin-top:30px; background:white; padding:25px; border-radius:20px;">
+      <h2>BJT Amplifier Notes</h2>
+      <p>BJT works as an amplifier by amplifying weak signals.</p>
+      <ul>
+        <li>Common Emitter</li>
+        <li>Current Gain</li>
+        <li>Voltage Gain</li>
+        <li>Input and Output Impedance</li>
+      </ul>
+    </div>
+
+    <div id="page3" class="page" style="display:none; margin-top:30px; background:white; padding:25px; border-radius:20px;">
+      <h2>Logic Gates Notes</h2>
+      <p>Logic gates perform basic digital operations.</p>
+      <ul>
+        <li>AND Gate</li>
+        <li>OR Gate</li>
+        <li>XOR Gate</li>
+        <li>NAND Gate</li>
+      </ul>
+    </div>
+
+    <div id="page4" class="page" style="display:none; margin-top:30px; background:white; padding:25px; border-radius:20px;">
+      <h2>Enhancement MOSFET Notes</h2>
+      <p>Enhancement MOSFET operates in enhancement mode only.</p>
+      <ul>
+        <li>N-Channel MOSFET</li>
+        <li>P-Channel MOSFET</li>
+        <li>Transfer Characteristics</li>
+        <li>Applications</li>
+      </ul>
+    </div>
+
+      <div class="card">
+        <h2>Semiconductor Physics</h2>
+        <h3>PN Junction Diode</h3>
+        <p>Learn depletion region, biasing and breakdown concepts.</p>
+        <button>View Notes</button>
+      </div>
+
+      <div class="card">
+        <h2>Analog Electronics</h2>
+        <h3>BJT Amplifier</h3>
+        <p>Study CE, CB and CC transistor amplifier configurations.</p>
+        <button>View Notes</button>
+      </div>
+
+      <div class="card">
+        <h2>Digital Electronics</h2>
+        <h3>Logic Gates</h3>
+        <p>Understand AND, OR, XOR, NAND and NOR gates.</p>
+        <button>View Notes</button>
+      </div>
+
+      <div class="card">
+        <h2>FET & MOSFET</h2>
+        <h3>Enhancement MOSFET</h3>
+        <p>Learn symbols, characteristics and working principles.</p>
+        <button>View Notes</button>
+      </div>
+
+    </div>
+
+    <section class="features">
+      <h2>Website Features</h2>
+
+      <div class="feature-grid">
+
+        <div class="feature-box blue">
+          <h3>PDF Notes</h3>
+          <p>Download chapter-wise study materials easily.</p>
+        </div>
+
+        <div class="feature-box purple">
+          <h3>Diagrams</h3>
+          <p>Clear circuit and graph diagrams for learning.</p>
+        </div>
+
+        <div class="feature-box pink">
+          <h3>Formulas</h3>
+          <p>Important formulas for quick revision.</p>
+        </div>
+
+        <div class="feature-box green">
+          <h3>Mobile Friendly</h3>
+          <p>Easy to use on mobile and tablet devices.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 ClassNotes | Engineering Study Portal</p>
+    </footer>
+
+  </div>
+
+
+<script>
+  function showPage(pageId) {
+    const pages = document.querySelectorAll('.page');
+    pages.forEach(page => {
+      page.style.display = 'none';
+    });
+
+    document.getElementById(pageId).style.display = 'block';
+  }
+</script>
+</body>
+</html>
